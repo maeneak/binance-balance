@@ -19,9 +19,9 @@ Custom Component for Home Assistant to show your Binance Balance as an entity.
 5. Place the files you downloaded in the new directory (folder) you created.
 6. Restart Home Assistant
 7. In the HA UI go to "Configuration" -> "Integrations" click "+" and search for "Binance Balance"
+8. Configuration is done in the UI
 
-Configuration is done in the UI
-
+Alternatively, add this project url as a custom repository in HACS and follow step 7 and 8 above.
 <!---->
 
 ## Contributions are welcome!
@@ -32,8 +32,6 @@ If you want to contribute to this please read the [Contribution guidelines](CONT
 
 [buymecoffee]: https://www.buymeacoffee.com/maeneak
 [buymecoffeebadge]: https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg?style=for-the-badge
-
-This project was generated from [@oncleben31](https://github.com/oncleben31)'s [Home Assistant Custom Component Cookiecutter](https://github.com/oncleben31/cookiecutter-homeassistant-custom-component) template.
 
 Code template was mainly taken from [@Ludeeus](https://github.com/ludeeus)'s [integration_blueprint][integration_blueprint] template
 
