@@ -1,0 +1,13 @@
+{
+  "domain": "binance_balance",
+  "name": "Binance Balance",
+  "documentation": "https://github.com/maeneak/binance-balance",
+  "issue_tracker": "https://github.com/maeneak/binance-balance/issues",
+  "dependencies": [],
+  "config_flow": true,
+  "codeowners": ["@maeneak"],
+  "version": "0.0.1",
+  "requirements": [
+    "python-binance==1.0.10"
+  ]
+}
