@@ -17,11 +17,11 @@ HEADERS = {"Content-type": "application/json; charset=UTF-8"}
 
 class BinanceBalanceApiClient:
     def __init__(
-        self, username: str, password: str, session: aiohttp.ClientSession
+        self, api_key: str, api_secret: str, session: aiohttp.ClientSession
     ) -> None:
         """Sample API Client."""
-        self._username = username
-        self._passeword = password
+        self._username = api_key
+        self._passeword = api_secret
         self._session = session
 
     async def async_get_data(self) -> dict:

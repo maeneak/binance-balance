@@ -3,7 +3,7 @@
 NAME = "Binance Balance"
 DOMAIN = "binance_balance"
 DOMAIN_DATA = f"{DOMAIN}_data"
-VERSION = "0.0.0"
+VERSION = "0.0.1"
 
 ATTRIBUTION = "Data provided by http://jsonplaceholder.typicode.com/"
 ISSUE_URL = "https://github.com/maeneak/binance-balance/issues"
@@ -23,8 +23,8 @@ PLATFORMS = [BINARY_SENSOR, SENSOR, SWITCH]
 
 # Configuration and options
 CONF_ENABLED = "enabled"
-CONF_USERNAME = "username"
-CONF_PASSWORD = "password"
+CONF_API_KEY = "Binance API Key"
+CONF_API_SECRET = "Binance API Secret"
 
 # Defaults
 DEFAULT_NAME = DOMAIN
