@@ -25,7 +25,7 @@ from .const import DOMAIN
 from .const import PLATFORMS
 from .const import STARTUP_MESSAGE
 
-SCAN_INTERVAL = timedelta(seconds=30)
+SCAN_INTERVAL = timedelta(seconds=60)
 
 _LOGGER: logging.Logger = logging.getLogger(__package__)
 
@@ -44,8 +44,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
     api_key = entry.data.get(CONF_API_KEY)
     api_secret = entry.data.get(CONF_API_SECRET)
 
-    session = async_get_clientsession(hass)
-    client = BinanceBalanceApiClient(api_key, api_secret, session)
+    # session = async_get_clientsession(hass)
+    client = BinanceBalanceApiClient(api_key, api_secret)
 
     coordinator = BinanceBalanceDataUpdateCoordinator(hass, client=client)
     await coordinator.async_refresh()

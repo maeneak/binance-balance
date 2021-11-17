@@ -3,15 +3,15 @@
     "step": {
       "user": {
         "title": "Binance Balance",
-        "description": "If you need help with the configuration have a look here: https://github.com/maeneak/binance-balance",
+        "description": "Goto 'API Management' in your Binance Account, generate API keys and enter them below.\r\nRegion is the regional exchange of your account. e.g. binance.com = com. Possible values include: com, jp, us or eu",
         "data": {
-          "username": "Username",
-          "password": "Password"
+          "Binance API Key": "Binance API Key",
+          "Binance API Secret": "Binance API Secret"
         }
       }
     },
     "error": {
-      "auth": "Username/Password is wrong."
+      "auth": "API Keys are wrong."
     },
     "abort": {
       "single_instance_allowed": "Only a single instance is allowed."

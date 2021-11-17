@@ -8,6 +8,7 @@ from .api import BinanceBalanceApiClient
 from .const import CONF_API_SECRET
 from .const import CONF_API_KEY
 from .const import DOMAIN
+from .const import NAME
 from .const import PLATFORMS
 
 
@@ -34,9 +35,7 @@ class BinanceBalanceFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
                 user_input[CONF_API_KEY], user_input[CONF_API_SECRET]
             )
             if valid:
-                return self.async_create_entry(
-                    title=user_input[CONF_API_KEY], data=user_input
-                )
+                return self.async_create_entry(title=user_input[NAME], data=user_input)
             else:
                 self._errors["base"] = "auth"
 

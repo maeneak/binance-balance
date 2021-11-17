@@ -1,15 +1,16 @@
 """Constants for Binance Balance."""
 # Base component constants
 NAME = "Binance Balance"
+DOMAIN_NAME = "Binance"
 DOMAIN = "binance_balance"
 DOMAIN_DATA = f"{DOMAIN}_data"
 VERSION = "0.0.1"
 
-ATTRIBUTION = "Data provided by http://jsonplaceholder.typicode.com/"
+ATTRIBUTION = "Data provided by http://binance.com/"
 ISSUE_URL = "https://github.com/maeneak/binance-balance/issues"
 
 # Icons
-ICON = "mdi:format-quote-close"
+ICON = "mdi:currency-btc"
 
 # Device classes
 BINARY_SENSOR_DEVICE_CLASS = "connectivity"
@@ -18,7 +19,7 @@ BINARY_SENSOR_DEVICE_CLASS = "connectivity"
 BINARY_SENSOR = "binary_sensor"
 SENSOR = "sensor"
 SWITCH = "switch"
-PLATFORMS = [BINARY_SENSOR, SENSOR, SWITCH]
+PLATFORMS = [SENSOR]
 
 
 # Configuration and options

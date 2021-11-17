@@ -3,6 +3,7 @@ from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
 from .const import ATTRIBUTION
 from .const import DOMAIN
+from .const import DOMAIN_NAME
 from .const import NAME
 from .const import VERSION
 
@@ -23,7 +24,7 @@ class BinanceBalanceEntity(CoordinatorEntity):
             "identifiers": {(DOMAIN, self.unique_id)},
             "name": NAME,
             "model": VERSION,
-            "manufacturer": NAME,
+            "manufacturer": DOMAIN_NAME,
         }
 
     @property
@@ -31,6 +32,6 @@ class BinanceBalanceEntity(CoordinatorEntity):
         """Return the state attributes."""
         return {
             "attribution": ATTRIBUTION,
-            "id": str(self.coordinator.data.get("id")),
+            "id": str(self.coordinator.data),
             "integration": DOMAIN,
         }

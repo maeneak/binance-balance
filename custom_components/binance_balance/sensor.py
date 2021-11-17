@@ -1,6 +1,7 @@
 """Sensor platform for Binance Balance."""
 from .const import DEFAULT_NAME
 from .const import DOMAIN
+from .const import NAME
 from .const import ICON
 from .const import SENSOR
 from .entity import BinanceBalanceEntity
@@ -18,17 +19,22 @@ class BinanceBalanceSensor(BinanceBalanceEntity):
     @property
     def name(self):
         """Return the name of the sensor."""
-        return f"{DEFAULT_NAME}_{SENSOR}"
+        return f"{DOMAIN}_spot"
 
     @property
     def state(self):
         """Return the state of the sensor."""
-        return self.coordinator.data.get("body")
+        return self.coordinator.data
 
     @property
     def icon(self):
         """Return the icon of the sensor."""
         return ICON
+
+    @property
+    def unit_of_measurement(self):
+        """Return the icon of the sensor."""
+        return "BTC"
 
     @property
     def device_class(self):
