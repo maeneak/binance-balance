@@ -14,18 +14,12 @@
 [![Discord][discord-shield]][discord]
 [![Community Forum][forum-shield]][forum]
 
-**TO BE REMOVED: If you need help, as a developer, to use this custom component tempalte,
-please look at the [User Guide in the Cookiecutter documentation](https://cookiecutter-homeassistant-custom-component.readthedocs.io/en/stable/quickstart.html)**
 
 **This component will set up the following platforms.**
 
 | Platform        | Description                                                               |
 | --------------- | ------------------------------------------------------------------------- |
-| `binary_sensor` | Show something `True` or `False`.                                         |
-| `sensor`        | Show info from Binance Balance API. |
-| `switch`        | Switch something `True` or `False`.                                       |
-
-![example][exampleimg]
+| `sensor`        | Show Spot Balance in BTC from Binance API. |
 
 ## Installation
 
@@ -37,26 +31,6 @@ please look at the [User Guide in the Cookiecutter documentation](https://cookie
 6. Restart Home Assistant
 7. In the HA UI go to "Configuration" -> "Integrations" click "+" and search for "Binance Balance"
 
-Using your HA configuration directory (folder) as a starting point you should now also have this:
-
-```text
-custom_components/binance_balance/translations/en.json
-custom_components/binance_balance/translations/fr.json
-custom_components/binance_balance/translations/nb.json
-custom_components/binance_balance/translations/sensor.en.json
-custom_components/binance_balance/translations/sensor.fr.json
-custom_components/binance_balance/translations/sensor.nb.json
-custom_components/binance_balance/translations/sensor.nb.json
-custom_components/binance_balance/__init__.py
-custom_components/binance_balance/api.py
-custom_components/binance_balance/binary_sensor.py
-custom_components/binance_balance/config_flow.py
-custom_components/binance_balance/const.py
-custom_components/binance_balance/manifest.json
-custom_components/binance_balance/sensor.py
-custom_components/binance_balance/switch.py
-```
-
 ## Configuration is done in the UI
 
 <!---->
@@ -67,6 +41,9 @@ If you want to contribute to this please read the [Contribution guidelines](CONT
 
 ## Credits
 
+[buymecoffee]: https://www.buymeacoffee.com/maeneak
+[buymecoffeebadge]: https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg?style=for-the-badge
+
 This project was generated from [@oncleben31](https://github.com/oncleben31)'s [Home Assistant Custom Component Cookiecutter](https://github.com/oncleben31/cookiecutter-homeassistant-custom-component) template.
 
 Code template was mainly taken from [@Ludeeus](https://github.com/ludeeus)'s [integration_blueprint][integration_blueprint] template
@@ -76,8 +53,6 @@ Code template was mainly taken from [@Ludeeus](https://github.com/ludeeus)'s [in
 [integration_blueprint]: https://github.com/custom-components/integration_blueprint
 [black]: https://github.com/psf/black
 [black-shield]: https://img.shields.io/badge/code%20style-black-000000.svg?style=for-the-badge
-[buymecoffee]: https://www.buymeacoffee.com/maeneak
-[buymecoffeebadge]: https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg?style=for-the-badge
 [commits-shield]: https://img.shields.io/github/commit-activity/y/maeneak/binance-balance.svg?style=for-the-badge
 [commits]: https://github.com/maeneak/binance-balance/commits/main
 [hacs]: https://hacs.xyz
