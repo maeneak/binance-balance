@@ -1,7 +1,6 @@
 # Binance Balance
 Custom Component for Home Assistant to show your Binance Balance as an entity.
 
-[![hacs][hacsbadge]][hacs]
 [![BuyMeCoffee][buymecoffeebadge]][buymecoffee]
 
 **This component will set up the following platforms.**
@@ -22,6 +21,8 @@ Custom Component for Home Assistant to show your Binance Balance as an entity.
 8. Configuration is done in the UI
 
 Alternatively, add this project url as a custom repository in HACS and follow step 7 and 8 above.
+
+[![hacs][hacsbadge]][hacs]
 <!---->
 
 ## Contributions are welcome!
