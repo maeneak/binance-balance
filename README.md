@@ -1,19 +1,8 @@
 # Binance Balance
-
-[![GitHub Release][releases-shield]][releases]
-[![GitHub Activity][commits-shield]][commits]
-[![License][license-shield]](LICENSE)
-
-[![pre-commit][pre-commit-shield]][pre-commit]
-[![Black][black-shield]][black]
+Custom Component for Home Assistant to show your Binance Balance as an entity.
 
 [![hacs][hacsbadge]][hacs]
-[![Project Maintenance][maintenance-shield]][user_profile]
 [![BuyMeCoffee][buymecoffeebadge]][buymecoffee]
-
-[![Discord][discord-shield]][discord]
-[![Community Forum][forum-shield]][forum]
-
 
 **This component will set up the following platforms.**
 
@@ -31,7 +20,7 @@
 6. Restart Home Assistant
 7. In the HA UI go to "Configuration" -> "Integrations" click "+" and search for "Binance Balance"
 
-## Configuration is done in the UI
+Configuration is done in the UI
 
 <!---->
 
