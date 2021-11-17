@@ -19,8 +19,8 @@ from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
 from homeassistant.helpers.update_coordinator import UpdateFailed
 
 from .api import BinanceBalanceApiClient
-from .const import CONF_PASSWORD
-from .const import CONF_USERNAME
+from .const import CONF_API_SECRET
+from .const import CONF_API_KEY
 from .const import DOMAIN
 from .const import PLATFORMS
 from .const import STARTUP_MESSAGE
@@ -41,11 +41,11 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
         hass.data.setdefault(DOMAIN, {})
         _LOGGER.info(STARTUP_MESSAGE)
 
-    username = entry.data.get(CONF_USERNAME)
-    password = entry.data.get(CONF_PASSWORD)
+    api_key = entry.data.get(CONF_API_KEY)
+    api_secret = entry.data.get(CONF_API_SECRET)
 
     session = async_get_clientsession(hass)
-    client = BinanceBalanceApiClient(username, password, session)
+    client = BinanceBalanceApiClient(api_key, api_secret, session)
 
     coordinator = BinanceBalanceDataUpdateCoordinator(hass, client=client)
     await coordinator.async_refresh()
