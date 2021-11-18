@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "Binance Balance",
-        "description": "Goto 'API Management' in your Binance Account, generate API keys and enter them below.\r\nRegion is the regional exchange of your account. e.g. binance.com = com. Possible values include: com, jp, us or eu",
+        "description": "Goto 'API Management' in your Binance Account, generate API keys and enter them below.\r\n\r\nRegion is the regional exchange of your account (com = binance.com).",
         "data": {
           "Binance API Key": "Binance API Key",
           "Binance API Secret": "Binance API Secret"
@@ -21,9 +21,7 @@
     "step": {
       "user": {
         "data": {
-          "binary_sensor": "Binary sensor enabled",
-          "sensor": "Sensor enabled",
-          "switch": "Switch enabled"
+          "sensor": "Sensor enabled"
         }
       }
     }

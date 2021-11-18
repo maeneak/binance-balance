@@ -26,6 +26,7 @@ PLATFORMS = [SENSOR]
 CONF_ENABLED = "enabled"
 CONF_API_KEY = "Binance API Key"
 CONF_API_SECRET = "Binance API Secret"
+CONF_EXHANGE = "Binance Exchange"
 
 # Defaults
 DEFAULT_NAME = DOMAIN

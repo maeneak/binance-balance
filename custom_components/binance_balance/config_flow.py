@@ -1,13 +1,15 @@
 """Adds config flow for Binance Balance."""
 import voluptuous as vol
+import homeassistant.helpers.config_validation as cv
 from homeassistant import config_entries
 from homeassistant.core import callback
 from homeassistant.helpers.aiohttp_client import async_create_clientsession
-
 from .api import BinanceBalanceApiClient
 from .const import CONF_API_SECRET
 from .const import CONF_API_KEY
+from .const import CONF_EXHANGE
 from .const import DOMAIN
+from .const import DOMAIN_NAME
 from .const import NAME
 from .const import PLATFORMS
 
@@ -35,7 +37,7 @@ class BinanceBalanceFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
                 user_input[CONF_API_KEY], user_input[CONF_API_SECRET]
             )
             if valid:
-                return self.async_create_entry(title=user_input[NAME], data=user_input)
+                return self.async_create_entry(title=DOMAIN_NAME, data=user_input)
             else:
                 self._errors["base"] = "auth"
 
@@ -49,11 +51,20 @@ class BinanceBalanceFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
         return BinanceBalanceOptionsFlowHandler(config_entry)
 
     async def _show_config_form(self, user_input):  # pylint: disable=unused-argument
+        exchanges = ["com", "eu", "us", "jp"]
+        default_exchange = "com"
+
         """Show the configuration form to edit location data."""
         return self.async_show_form(
             step_id="user",
             data_schema=vol.Schema(
-                {vol.Required(CONF_API_KEY): str, vol.Required(CONF_API_SECRET): str}
+                {
+                    vol.Required(CONF_API_KEY): str,
+                    vol.Required(CONF_API_SECRET): str,
+                    vol.Required(CONF_EXHANGE, default=default_exchange): vol.In(
+                        exchanges
+                    ),
+                }
             ),
             errors=self._errors,
         )
@@ -101,5 +112,5 @@ class BinanceBalanceOptionsFlowHandler(config_entries.OptionsFlow):
     async def _update_options(self):
         """Update config entry options."""
         return self.async_create_entry(
-            title=self.config_entry.data.get(CONF_API_KEY), data=self.options
+            title=self.config_entry.data.get(DOMAIN_NAME), data=self.options
         )

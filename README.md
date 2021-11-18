@@ -7,7 +7,7 @@ Custom Component for Home Assistant to show your Binance Balance as an entity.
 
 | Platform        | Description                                                               |
 | --------------- | ------------------------------------------------------------------------- |
-| `sensor`        | Show Spot Balance in BTC from Binance API. |
+| `sensor`        | Show Spot Balance in USD from Binance API. |
 
 ## Installation
 

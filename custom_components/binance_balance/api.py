@@ -16,14 +16,15 @@ HEADERS = {"Content-type": "application/json; charset=UTF-8"}
 
 
 class BinanceBalanceApiClient:
-    def __init__(self, api_key: str, api_secret: str) -> None:
+    def __init__(self, api_key: str, api_secret: str, tld: str) -> None:
         """Sample API Client."""
         self._api_key = api_key
         self._api_secret = api_secret
+        self.tld = tld
         self._session = None
 
     async def async_setup_client(self) -> AsyncClient:
-        return await AsyncClient.create(self._api_key, self._api_secret)
+        return await AsyncClient.create(self._api_key, self._api_secret, tld=self.tld)
 
     async def async_get_data(self) -> dict:
         """Get data from the API."""
@@ -72,7 +73,9 @@ class BinanceBalanceApiClient:
         relevant_balances_in_btc = {
             k: v for k, v in balances_in_btc.items() if v["$"] > 0.0001
         }
-        return sum(d["$"] for d in relevant_balances_in_btc.values() if d)
+        return round(
+            sum(d["$"] for d in relevant_balances_in_btc.values() if d) * btc_usdt, 2
+        )
 
     def getTickerMapIn(self, symbol, tickers):
         return {

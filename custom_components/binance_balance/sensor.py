@@ -34,7 +34,7 @@ class BinanceBalanceSensor(BinanceBalanceEntity):
     @property
     def unit_of_measurement(self):
         """Return the icon of the sensor."""
-        return "BTC"
+        return "USD"
 
     @property
     def device_class(self):
