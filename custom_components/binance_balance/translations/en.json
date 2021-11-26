@@ -11,7 +11,7 @@
       }
     },
     "error": {
-      "auth": "API Keys are wrong."
+      "auth": "API Keys are invalid."
     },
     "abort": {
       "single_instance_allowed": "Only a single instance is allowed."

@@ -5,12 +5,11 @@ from homeassistant import config_entries
 from homeassistant.core import callback
 from homeassistant.helpers.aiohttp_client import async_create_clientsession
 from .api import BinanceBalanceApiClient
-from .const import CONF_API_SECRET
+from .const import CONF_API_SECRET, CONF_UPDATE_FREQUENCY
 from .const import CONF_API_KEY
 from .const import CONF_EXHANGE
 from .const import DOMAIN
 from .const import DOMAIN_NAME
-from .const import NAME
 from .const import PLATFORMS
 
 
@@ -33,8 +32,11 @@ class BinanceBalanceFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
         #     return self.async_abort(reason="single_instance_allowed")
 
         if user_input is not None:
-            valid = await self._test_credentials(
-                user_input[CONF_API_KEY], user_input[CONF_API_SECRET]
+            valid = await self._check_config(
+                user_input[CONF_API_KEY],
+                user_input[CONF_API_SECRET],
+                user_input[CONF_EXHANGE],
+                user_input[CONF_UPDATE_FREQUENCY],
             )
             if valid:
                 return self.async_create_entry(title=DOMAIN_NAME, data=user_input)
@@ -69,12 +71,12 @@ class BinanceBalanceFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
             errors=self._errors,
         )
 
-    async def _test_credentials(self, key, secret):
+    async def _check_config(self, key, secret, tld, update):
         """Return true if credentials is valid."""
         try:
             # session = async_create_clientsession(self.hass)
-            # client = BinanceBalanceApiClient(username, password, session)
-            # await client.async_get_data()
+            client = BinanceBalanceApiClient(key, secret, tld)
+            await client.async_get_data()
             return True
         except Exception:  # pylint: disable=broad-except
             pass
